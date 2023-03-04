@@ -36,17 +36,20 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
+  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let displayTemp = document.querySelector("#temperatureNow");
   let changeCity = document.querySelector("#newCity");
    let descriptionItem = document.querySelector("#description");
    let windSpeed = document.querySelector("#wind");
+    let iconItem = document.querySelector("#icon");
 
 
 changeCity.innerHTML = response.data.name; 
 displayTemp.innerHTML = `${temp}°C`;
 descriptionItem.innerHTML = response.data.weather[0].description;
 windSpeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
+iconItem.innerHTML = `<img src='https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'>`;
 
   }
 
