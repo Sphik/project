@@ -26,8 +26,7 @@ function formatDate(date) {
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = formatDate(currentTime);
 
-let searchForm = document.querySelector("#search-input");
-searchForm.addEventListener("submit", searchCity);
+
 
 function getForecast(coordinates) {
   let apiKey = "2ff29bed3181c3526c35cc5408037f85";
@@ -50,19 +49,30 @@ displayTemp.innerHTML = `${temp}°C`;
 descriptionItem.innerHTML = response.data.weather[0].description;
 windSpeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
 iconItem.innerHTML = `<img src='https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'>`;
+ }
 
-  }
-
-function searchCity(event) {
-  event.preventDefault();
-  let apiKey = "2513f3c728b1b5ff4f4347e1a6af22b8";
-  let city = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
-}
 
 function currentPosition(position) {
   let apiKey = "2513f3c728b1b5ff4f4347e1a6af22b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+
+function search(city) {
+  let apiKey = "2513f3c728b1b5ff4f4347e1a6af22b8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function submit(event){
+event.preventDefault();
+ let city = document.querySelector("#city-input").value;
+ search(city);
+}
+
+let searchForm = document.querySelector("#search-input");
+searchForm.addEventListener("submit", submit);
+
+
+search("Denver");
