@@ -53,3 +53,7 @@ h1 {
 .unit {
     text-align: left;
 }
+.footer {
+    display: block;
+    text-align: center;
+}
