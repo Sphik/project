@@ -1,17 +1,52 @@
+body {
+    background-image: url(https://images.unsplash.com/photo-1555344945-a8de57648a78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+    background-size: cover;
+
+}
+
+.project {
+
+    padding: 20px;
+    border: 1px solid rgb(250, 208, 197);
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgb(229, 169, 153) 0%, rgb(252, 251, 253) 100%);
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+.forecast-wrapper {
+    background-color: #e5a999;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
 h1 {
-    color: #494949;
+    font-family: 'Righteous', cursive;
     text-align: center;
 }
 
 .weatherconditions:first-letter {
     text-transform: capitalize;
 }
+
 .city {
     font-size: 46px;
     font-weight: 500;
     text-align: left;
+    margin-left: 50px;
+    margin-top: 15px;
 }
 
+.temp-top{
+        margin-top: 15px;
+}
+
+.currentdate{
+
+    text-align: right;
+    margin-right: 30px;
+}
 .icon-top {
     font-size: 42px;
     padding: 0 50px 20px;
@@ -33,17 +68,12 @@ h1 {
 }
 
 
-.wrapper{
-        max-width: 600px;
-        margin: 30px auto;
-    }
+.wrapper {
+    max-width: 600px;
+    margin: 30px auto;
+}
 
-    .project {
-         padding: 20px;
-         border: 1px solid #dadde1;
-         border-radius: 5px;
-         background-color: rgb(234, 245, 255);
-     }
+
 
 .searchbar {
     border-radius: 5px;
@@ -53,7 +83,9 @@ h1 {
 .unit {
     text-align: left;
 }
+
 .footer {
     display: block;
     text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
 }
