@@ -102,6 +102,7 @@ displayTemp.innerHTML = `${temp}°C`;
 descriptionItem.innerHTML = response.data.weather[0].description;
 windSpeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
 iconItem.innerHTML = `<img src='https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'>`;
+  getForecast(response.data.coord);
  }
 
 
